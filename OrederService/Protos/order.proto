@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "OrederService.Protos";
+
+package order;
+
+message ItemRequest{
+    int32 id = 1;
+}
+
+message IsAvailableReply{
+    bool IsAvailable = 1;
+}
+
+service OrderInventory {
+  rpc IsAvailable (ItemRequest) returns (IsAvailableReply);
+}
